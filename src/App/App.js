@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import taxInfo from '../lib';
+import { taxCalculator, nationalInsurance } from '../lib';
+
 
 function App() {
-const tax = taxInfo;
+
   const [personalIncome, setPersonalIncome] = useState(0);
   const [annualIncome, setAnnualIncome] = useState(0);
   const [ni, setNi] = useState(0);
@@ -20,16 +21,16 @@ const tax = taxInfo;
   }
  
   function handleSubmit(event) {
-    let nationalInsurance = tax.nationalInsurance(1, personalIncome);
-    let incomeTax = tax.totalTax(1, personalIncome);
-    let totalTax = nationalInsurance + incomeTax;
+    let nationalInsuranceAm = nationalInsurance(1, personalIncome);
+    let incomeTax = taxCalculator(1, personalIncome);
+    let totalTax = nationalInsuranceAm + incomeTax;
     let netIncome = personalIncome - totalTax;
     let monthlyIncome = netIncome/ 12;
     let weeklyIncome = netIncome / 52;
     setNetIncome(netIncome);
     setMonthlyIncome(monthlyIncome);
     setWeeklyIncome(weeklyIncome);
-    setNi(nationalInsurance);
+    setNi(nationalInsuranceAm);
     setIncomeTax(incomeTax);
     setData(totalTax);
     setAnnualIncome(personalIncome);
@@ -48,9 +49,9 @@ const tax = taxInfo;
       <label>
           Tax Year:
                     <select value={year} onChange={handleChange}>
-            <option value="1">2022/23</option>
-            <option value="2">2023/24</option>
-            <option value="3">2024/25</option>
+          
+            <option value="1">2023/24</option>
+            <option value="2">2024/25</option>
           </select>
         </label>
     
