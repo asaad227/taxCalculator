@@ -15,7 +15,7 @@ const tax = libary;
  
   function handleSubmit(event) {
     let nationalInsurance = tax.nationalInsurance(1, personalIncome);
-    let incomeTax = tax.incomeTax(1, personalIncome);
+    let incomeTax = tax.totalTax(1, personalIncome);
     let totalTax = nationalInsurance + incomeTax;
     setData(totalTax);
   event.preventDefault();
@@ -32,8 +32,9 @@ const tax = libary;
       <label>
           Tax Year:
           <select value={year} onChange={handleChange}>
-            <option value="1">2021/22</option>
-            <option value="2">2022/23</option>
+            <option value="1">2022/23</option>
+            <option value="2">2023/24</option>
+            <option value="3">2024/25</option>
           </select>
         </label>
     
@@ -45,6 +46,8 @@ const tax = libary;
         <input type="submit" value="Submit" />
       </form>
       <p>Personal Income: {personalIncome}</p>
+      <p>National Insurance: {tax.nationalInsurance(1, personalIncome)}</p>
+      <p>Income Tax: {tax.totalTax(1, personalIncome)}</p>
       <p>Total Tax: {data}</p>
     </div>
   );
