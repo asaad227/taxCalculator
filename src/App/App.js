@@ -58,13 +58,14 @@ const tax = libary;
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <div className='flex-container result'>
       <p>National Insurance: {ni.toFixed(2)}</p>
       <p>Income Tax: {incomeTax.toFixed(2)}</p>
       <p>Total Tax: {data.toFixed(2)}</p>
       <p>Take Home payment: {netIncome.toFixed(2)}</p>
       <p>Take Home payment per month: {monthlyIncome.toFixed(2)}</p>
       <p>Take Home payment per week: {weeklyIncome.toFixed(2)}</p>
-
+      </div>
      
 
     </div>
