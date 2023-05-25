@@ -1,0 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.App form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.App form input {
+  margin: 10px 0;
+  padding: 10px;
+  width: 23.5vw;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.App form input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  width: 25vw;
+  color: white;
+  cursor: pointer;
+}
+
+.App form input:focus {
+  outline: none;
+}
+
+
+
