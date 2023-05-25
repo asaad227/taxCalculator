@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import libary from '../lib';
+import taxInfo from '../lib';
 
 function App() {
-const tax = libary;
+const tax = taxInfo;
   const [personalIncome, setPersonalIncome] = useState(0);
   const [annualIncome, setAnnualIncome] = useState(0);
   const [ni, setNi] = useState(0);

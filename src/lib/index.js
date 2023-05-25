@@ -1,95 +1,42 @@
-const libary = {
+const taxInfo = {
+   allowances: {
+        personalAllowance: 12570,
+        basicRate: 37570,
+        higherRate: 150000,
+        additionalRate: 150000,
+       
+   },
+    rates: {
+        basicRate: 0.2,
+        higherRate: 0.4,
+        additionalRate: 0.45,
+        nationalInsurance: 0.12,
+        higherRateNationalInsurance: 0.02,
+        additionalRateNationalInsurance: 0.02,  
+    },
     nationalInsurance: function (year, income) {
-        let nationalInsurance = 0;
+        let ni = 0;
         if (year === 1) {
-            if (income <= 9500) {
-                nationalInsurance = 0;
-            } else if (income > 9500 && income <= 50000) {
-                nationalInsurance = (income - 9500) * 0.12;
-            } else if (income > 50000) {
-                nationalInsurance = (income - 50000) * 0.02 + (50000 - 9500) * 0.12;
+            if (income > 9500) {
+                ni = (income - 9500) * this.rates.nationalInsurance;
             }
         }
-        return nationalInsurance;
-    }
-    ,
-    allowance: function (year) {
-        if (year === 1) {
-            return 12570;
-        } else {
-            return 0;
-        }
-    }
-    ,
-    basicRate: function (year) {
-        if (year === 1) {
-            return 50000;
-        } else {
-            return 0;
-        }
-    }
-    ,
-    higherRate: function (year) {
-        if (year === 1) {
-            return 150000;
-        } else {
-            return 0;
-        }
-    }
-    ,
-    additionalRate: function (year) {
-        if (year === 1) {
-            return 0;
-        }
-    }
-    ,
-    percentageBasicRate: function (year) {
-        if (year === 1) {
-            return 20;
-        } else {
-            return 0;
-        }
-    }
-    ,
-    percentageHigherRate: function (year) {
-        if (year === 1) {
-            return 40;
-        } else {
-            return 0;
-        }
-    }
-    ,
-    percentageAdditionalRate: function (year) {
-        if (year === 1) {
-            return 45;
-        } else {
-            return 0;
-        }
+        return ni;
     },
     totalTax: function (year, income) {
-        let allowance = this.allowance(year);
-        let basicRate = this.basicRate(year);
-        let higherRate = this.higherRate(year);
-        let additionalRate = this.additionalRate(year);
-        let taxBasicRate = (income - allowance) * (this.percentageBasicRate(year) / 100);
-        let taxHigherRate = (income - basicRate) * (this.percentageHigherRate(year) / 100);
-        let taxAdditionalRate = (income - higherRate) * (this.percentageAdditionalRate(year) / 100);
         let totalTax = 0;
-        if (income <= allowance) {
-            totalTax = 0;
-        } else if (income > allowance && income <= basicRate) {
-            totalTax = taxBasicRate;
-        } else if (income > basicRate && income <= higherRate) {
-            totalTax = taxBasicRate + taxHigherRate;
-        } else if (income > higherRate && income <= additionalRate) {
-            totalTax = taxBasicRate + taxHigherRate + taxAdditionalRate;
-        } else if (income > additionalRate) {
-            totalTax = taxBasicRate + taxHigherRate + taxAdditionalRate;
+        if (year === 1) {
+            if (income > 12570 && income < 50000) {
+                totalTax = (income - 12570) * this.rates.basicRate;
+            } else if (income > 50000 && income < 150000) {
+                totalTax = (income - 50000) * this.rates.higherRate + 37430;
+            } else if (income > 150000) {
+                totalTax = (income - 150000) * this.rates.additionalRate + 50000;
+            }
         }
         return totalTax;
-    }
-
-
+    },
+   
 };
 
-export default libary;
+export default taxInfo;
