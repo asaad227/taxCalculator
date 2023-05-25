@@ -83,12 +83,11 @@
   font-weight: bold;
 
 }
-select{
-  width: 27vw;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  margin: 10px 5px;
+.result h2{
+  color: #4CAF50;
+  font-weight: bold;
+  margin: 10px auto;
+  padding: 0;
 }
 
 .result p .tax{
@@ -96,7 +95,13 @@ select{
   font-weight: bold;
   
 }
-
+select{
+  width: 6vw;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 5px;
+}
 
 
 
@@ -108,13 +113,20 @@ select{
     width: 90vw;
   }
   .App form input {
-    width: 35vw;
+    width: 52vw;
   }
   .App form input[type="submit"] {
-    width: 42vw;
+    width: 58vw;
   }
   .flex-container{
     width: 90vw;
+  }
+  select{
+    width: 27vw;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin: 10px 5px;
   }
 }
   
