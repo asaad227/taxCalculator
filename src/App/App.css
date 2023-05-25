@@ -61,6 +61,45 @@
   background-color: bisque;
 }
 
+.result p{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+  padding:0;
+  color: black
+}
+ .divider{
+  border-bottom: 1px solid #837c7c;
+  margin: 0 10px;
+  padding: 0;
+}
+.no-divider{
+  border-bottom: none;
+  margin: 10px auto;
+  padding: 0;
+  }
+.result p .income{
+  color: #4CAF50;
+  font-weight: bold;
+
+}
+select{
+  width: 27vw;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 5px;
+}
+
+.result p .tax{
+  color:red;
+  font-weight: bold;
+  
+}
+
+
+
+
 @media screen and (max-width: 600px) {
   .App h1 {
     width: 90vw;
