@@ -58,7 +58,7 @@ function App() {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" value={personalIncome} onChange={handleChange} />
+          <input type="number" value={personalIncome} onChange={handleChange} placeholder='Enter your income here...' />
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -67,7 +67,7 @@ function App() {
       <div className='divider'></div>
       <p>Annual Income: <span className='income'>£{annualIncome}</span></p>
       <div className='total'>
-      <p>National Insurance: <span className='tax'>£{ni.toFixed(2)}</span></p>
+      <p>NI: <span className='tax'>£{ni.toFixed(2)}</span></p>
       <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
        </p>
        <div className='small-divider'></div>
