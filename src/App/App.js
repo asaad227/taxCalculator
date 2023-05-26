@@ -3,6 +3,7 @@ import './App.css';
 import { taxCalculator, nationalInsurance } from '../lib';
 
 
+
 function App() {
 
   const [personalIncome, setPersonalIncome] = useState(0);
@@ -45,7 +46,8 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Tax Calculator UK</h1>
+     <h1>Tax Calculator UK</h1>
+     
       <form onSubmit={handleSubmit}>
       <label>
           Tax Year:
@@ -66,21 +68,21 @@ function App() {
       <div className='flex-container result'>
       <h2>Results</h2>
       <div className='divider'></div>
-      <p>Annual Income: <span className='income'>£{ annualIncome}</span></p>
+      <p>Annual Income Before Tax & NI: <span className='income'>£{ annualIncome}</span></p>
       <div className='total'>
       <p>NI: <span className='tax'>£{ni.toFixed(2)}</span></p>
       <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
        </p>
        <div className='small-divider'></div>
-      <p>Total Tax including NI: <span className='tax total-tax'>-£{data.toFixed(2)}</span></p>
+      <p>Total Tax: <span className='tax total-tax'>-£{data.toFixed(2)}</span></p>
       </div>
       
 
       
       <div className='divider'></div>
-      <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
-      <p>Net Income per month: <span className='income'>£{monthlyIncome.toFixed(2)}</span></p>
-      <p>Net Income per week: <span className='income'>£{weeklyIncome.toFixed(2)}</span></p>
+      <p>Take home pay: <span className='income'>£{netIncome.toFixed(2)}</span></p>
+      <p>Take home pay per month: <span className='income'>£{monthlyIncome.toFixed(2)}</span></p>
+      <p>Take home pay per week: <span className='income'>£{weeklyIncome.toFixed(2)}</span></p>
       <div className='no-divider'></div>
       </div>
      
