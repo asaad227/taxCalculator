@@ -27,14 +27,14 @@ function App() {
     let netIncome = personalIncome - totalTax;
     let monthlyIncome = netIncome/ 12;
     let weeklyIncome = netIncome / 52;
-    let incomeTotal= personalIncome.toFixed(2)
+    
     setNetIncome(netIncome);
     setMonthlyIncome(monthlyIncome);
     setWeeklyIncome(weeklyIncome);
     setNi(nationalInsuranceAm);
     setIncomeTax(incomeTax);
     setData(totalTax);
-    setAnnualIncome(incomeTotal);
+    setAnnualIncome(personalIncome);
     setPersonalIncome(0);
   event.preventDefault();
   }
@@ -59,14 +59,14 @@ function App() {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" step='0.01' value={personalIncome} onChange={handleChange} placeholder='Enter your income here...' />
+          <input type="number" value={personalIncome} onChange={handleChange}/>
         </label>
         <input type="submit" value="Submit" />
       </form>
       <div className='flex-container result'>
       <h2>Results</h2>
       <div className='divider'></div>
-      <p>Annual Income: <span className='income'>£{annualIncome}</span></p>
+      <p>Annual Income: <span className='income'>£{annualIncome? annualIncome.toFixed(2): 0.00}</span></p>
       <div className='total'>
       <p>NI: <span className='tax'>£{ni.toFixed(2)}</span></p>
       <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
