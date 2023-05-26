@@ -66,9 +66,16 @@ function App() {
       <h2>Results</h2>
       <div className='divider'></div>
       <p>Annual Income: <span className='income'>£{annualIncome}</span></p>
+      <div className='total'>
       <p>National Insurance: <span className='tax'>£{ni.toFixed(2)}</span></p>
-      <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span> </p>
-      <p>Total Tax including NI: <span className='tax'>£{data.toFixed(2)}</span></p>
+      <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
+       </p>
+       <div className='small-divider'></div>
+      <p>Total Tax including NI: <span className='tax total-tax'>-£{data.toFixed(2)}</span></p>
+      </div>
+      
+
+      
       <div className='divider'></div>
       <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
       <p>Net Income per month: <span className='income'>£{monthlyIncome.toFixed(2)}</span></p>

@@ -73,6 +73,14 @@
   margin: 0 10px;
   padding: 0;
 }
+.small-divider{
+  border-bottom: 1px solid #837c7c;
+  margin: 5px 10px;
+  padding: 0;
+}
+.total-tax{
+margin: 0 -48px;
+}
 .no-divider{
   border-bottom: none;
   margin: 10px auto;
@@ -103,6 +111,13 @@ select{
   margin: 10px 5px;
 }
 
+.total{
+  display: flex;
+  flex-direction: column;
+  margin: 0 48px;
+  padding:0;
+  color: black
+}
 
 
 @media screen and (max-width: 600px) {
