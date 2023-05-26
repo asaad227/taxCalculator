@@ -25,9 +25,9 @@ function App() {
   }
 function incomeTotal(event) {
   if(totalMonthlyIncome > 0) {
-    setPersonalIncome(totalMonthlyIncome * 12);
+    setPersonalIncome((totalMonthlyIncome * 12).toFixed(2));
   } else if (incomeByHour > 0) {
-    setPersonalIncome(incomeByHour * hrsPerWeek * 52);
+    setPersonalIncome((incomeByHour * hrsPerWeek * 52).toFixed(2));
   }
   setHrsPerWeek(0);
   setIncomeByHour(0);
@@ -63,22 +63,30 @@ function incomeTotal(event) {
     <div className="App">
      <h1>Tax Calculator UK</h1>
      <form onSubmit={incomeTotal}>
+      <h2>Income</h2>
+     <label>
+      Hourly Income:
+          <br />
+          <input type="number" step=".01" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
+          <input type='number'  onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
+      </label>
+      <label>
+      OR
+      </label>
       <label>
       Monthly Income:
           <br />
-          <input type="number" onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
+          <input type="number" step='.01' onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
   
       </label>
-      <label>
-      Hourly Income:
-          <br />
-          <input type="number" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
-          <input type='number' onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
-      </label>
+     
+     
       <input type="submit" value="Total Income" />
       </form>
      
       <form onSubmit={handleSubmit}>
+      <h2>Annual Income</h2>
+     
       <label>
           Tax Year:
                     <select value={year} onChange={handleChange}>
@@ -91,9 +99,9 @@ function incomeTotal(event) {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" value={personalIncome} onChange={handleChange}/>
+          <input type="number" step='.01' onChange={handleChange} placeholder='Annual income here...'/>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Calculate" />
       </form>
       <div className='flex-container result'>
       <h2>Results</h2>
