@@ -44,6 +44,10 @@
   width: 13.5vw;
   color: white;
   cursor: pointer;
+
+}
+.App form input[type="submit"]:hover {
+  background-color: #558a57;
 }
 
 .App form input:focus {

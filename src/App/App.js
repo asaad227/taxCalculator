@@ -6,14 +6,14 @@ import { taxCalculator, nationalInsurance } from '../lib';
 
 function App() {
 
-  const [personalIncome, setPersonalIncome] = useState(0);
+  const [personalIncome, setPersonalIncome] = useState("");
   const [annualIncome, setAnnualIncome] = useState(0);
   const [ni, setNi] = useState(0);
   const [incomeTax, setIncomeTax] = useState(0);
   const [netIncome, setNetIncome] = useState(0);
-  const [totalMonthlyIncome, setTotalMonthlyIncome] = useState(0);
-  const [incomeByHour, setIncomeByHour] = useState(0);
-  const [hrsPerWeek, setHrsPerWeek] = useState(0);
+  const [totalMonthlyIncome, setTotalMonthlyIncome] = useState("");
+  const [incomeByHour, setIncomeByHour] = useState("");
+  const [hrsPerWeek, setHrsPerWeek] = useState("");
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [weeklyIncome, setWeeklyIncome] = useState(0);
   const [year, setYear] = useState(1);
@@ -24,13 +24,17 @@ function App() {
     setYear(event.target.value);
   }
 function incomeTotal(event) {
-  if(totalMonthlyIncome > 0) {
+  if(totalMonthlyIncome > 0 && incomeByHour > 0 && hrsPerWeek > 0) {
+    alert('Please enter either monthly income or hourly income, not both');
+  }
+  if(totalMonthlyIncome > 0 && totalMonthlyIncome < 1000000) {
     setPersonalIncome((totalMonthlyIncome * 12).toFixed(2));
-  } else if (incomeByHour > 0) {
+  } else if (incomeByHour > 0 && incomeByHour < 1000000 && hrsPerWeek > 0 && hrsPerWeek < 168) {
     setPersonalIncome((incomeByHour * hrsPerWeek * 52).toFixed(2));
   }
-  setHrsPerWeek(0);
-  setIncomeByHour(0);
+setHrsPerWeek("");
+setIncomeByHour("");
+setTotalMonthlyIncome("");
   event.preventDefault();
 }
 
@@ -51,7 +55,7 @@ function incomeTotal(event) {
     setIncomeTax(incomeTax);
     setData(totalTax);
     setAnnualIncome(personalIncome);
-    setPersonalIncome(0);
+    setPersonalIncome("");
   event.preventDefault();
   }
 
@@ -67,8 +71,8 @@ function incomeTotal(event) {
      <label>
       Hourly Income:
           <br />
-          <input type="number" step=".01" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
-          <input type='number'  onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
+          <input type="number" value={incomeByHour} step=".01" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
+          <input type='number' value={hrsPerWeek}  onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
       </label>
       <label>
       OR
@@ -76,7 +80,7 @@ function incomeTotal(event) {
       <label>
       Monthly Income:
           <br />
-          <input type="number" step='.01' onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
+          <input type="number" step='.01' value={totalMonthlyIncome} onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
   
       </label>
      
@@ -99,7 +103,7 @@ function incomeTotal(event) {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" step='.01' onChange={handleChange} placeholder='Annual income here...'/>
+          <input type="number" step='.01' value={personalIncome} onChange={handleChange} placeholder='Annual income here...'/>
         </label>
         <input type="submit" value="Calculate" />
       </form>
