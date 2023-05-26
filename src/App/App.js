@@ -27,13 +27,14 @@ function App() {
     let netIncome = personalIncome - totalTax;
     let monthlyIncome = netIncome/ 12;
     let weeklyIncome = netIncome / 52;
+    let incomeTotal= personalIncome.toFixed(2)
     setNetIncome(netIncome);
     setMonthlyIncome(monthlyIncome);
     setWeeklyIncome(weeklyIncome);
     setNi(nationalInsuranceAm);
     setIncomeTax(incomeTax);
     setData(totalTax);
-    setAnnualIncome(personalIncome);
+    setAnnualIncome(incomeTotal);
     setPersonalIncome(0);
   event.preventDefault();
   }
@@ -58,7 +59,7 @@ function App() {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" step='0.01' value={personalIncome.toFixed(2)} onChange={handleChange} placeholder='Enter your income here...' />
+          <input type="number" step='0.01' value={personalIncome} onChange={handleChange} placeholder='Enter your income here...' />
         </label>
         <input type="submit" value="Submit" />
       </form>
