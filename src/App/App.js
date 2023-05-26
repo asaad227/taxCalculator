@@ -66,7 +66,7 @@ function App() {
       <div className='flex-container result'>
       <h2>Results</h2>
       <div className='divider'></div>
-      <p>Annual Income: <span className='income'>£{annualIncome? annualIncome.toFixed(2): 0.00}</span></p>
+      <p>Annual Income: <span className='income'>£{ annualIncome}</span></p>
       <div className='total'>
       <p>NI: <span className='tax'>£{ni.toFixed(2)}</span></p>
       <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
