@@ -58,7 +58,7 @@ function App() {
         <label>
         Annual Employment Income:
           <br />
-          <input type="number" value={personalIncome} onChange={handleChange} placeholder='Enter your income here...' />
+          <input type="number" step='0.01' value={personalIncome.toFixed(2)} onChange={handleChange} placeholder='Enter your income here...' />
         </label>
         <input type="submit" value="Submit" />
       </form>
