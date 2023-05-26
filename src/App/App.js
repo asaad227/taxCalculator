@@ -72,7 +72,7 @@ setTotalMonthlyIncome("");
       Hourly Income:
           <br />
           <input type="number" value={incomeByHour} step=".01" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
-          <input type='number' value={hrsPerWeek}  onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
+          <input type='number' value={hrsPerWeek}  onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week here...'/>
       </label>
       <label>
       OR
@@ -101,7 +101,6 @@ setTotalMonthlyIncome("");
         </label>
     
         <label>
-        Annual Employment Income:
           <br />
           <input type="number" step='.01' value={personalIncome} onChange={handleChange} placeholder='Annual income here...'/>
         </label>
@@ -110,7 +109,7 @@ setTotalMonthlyIncome("");
       <div className='flex-container result'>
       <h2>Results</h2>
       <div className='divider'></div>
-      <p>Annual Income Before Tax & NI: <span className='income'>£{ annualIncome}</span></p>
+      <p>Income Before Tax & NI: <span className='income'>£{ annualIncome}</span></p>
       <div className='total'>
       <p>NI: <span className='tax'>£{ni.toFixed(2)}</span></p>
       <p>Income Tax: <span className='tax'>£{incomeTax.toFixed(2)}</span>
