@@ -11,6 +11,9 @@ function App() {
   const [ni, setNi] = useState(0);
   const [incomeTax, setIncomeTax] = useState(0);
   const [netIncome, setNetIncome] = useState(0);
+  const [totalMonthlyIncome, setTotalMonthlyIncome] = useState(0);
+  const [incomeByHour, setIncomeByHour] = useState(0);
+  const [hrsPerWeek, setHrsPerWeek] = useState(0);
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [weeklyIncome, setWeeklyIncome] = useState(0);
   const [year, setYear] = useState(1);
@@ -20,6 +23,18 @@ function App() {
     setPersonalIncome(event.target.value);
     setYear(event.target.value);
   }
+function incomeTotal(event) {
+  if(totalMonthlyIncome > 0) {
+    setPersonalIncome(totalMonthlyIncome * 12);
+  } else if (incomeByHour > 0) {
+    setPersonalIncome(incomeByHour * hrsPerWeek * 52);
+  }
+  setHrsPerWeek(0);
+  setIncomeByHour(0);
+  event.preventDefault();
+}
+
+
  
   function handleSubmit(event) {
     let nationalInsuranceAm = nationalInsurance(1, personalIncome);
@@ -47,6 +62,21 @@ function App() {
   return (
     <div className="App">
      <h1>Tax Calculator UK</h1>
+     <form onSubmit={incomeTotal}>
+      <label>
+      Monthly Income:
+          <br />
+          <input type="number" onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
+  
+      </label>
+      <label>
+      Hourly Income:
+          <br />
+          <input type="number" onChange={(e)=>setIncomeByHour(e.target.value)} placeholder='Per hour pay here...' />
+          <input type='number' onChange={(e)=>setHrsPerWeek(e.target.value)} placeholder='Hours per week'/>
+      </label>
+      <input type="submit" value="Total Income" />
+      </form>
      
       <form onSubmit={handleSubmit}>
       <label>
