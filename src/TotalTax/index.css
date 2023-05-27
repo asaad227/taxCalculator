@@ -157,7 +157,17 @@
   .result .pensionHide, .result .loanHide{
     display: none;
   }
-   
+   form .annualShow .monthlyShow, .weeklyShow, .dailyShow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding:0;
+    color: black
+    }
+    form .annualHide, .monthlyHide, .weeklyHide, .dailyHide{
+    display: none;
+    }
   
   @media screen and (max-width: 600px) {
     .main h1 {

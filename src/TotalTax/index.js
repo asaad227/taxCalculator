@@ -13,6 +13,11 @@ const [educationLoan, setEducationLoan] = useState(0);
 const[pension, setPension] = useState(0);
 const[isPension, setIsPension] = useState(false);
 const [isLoan, setIsLoan] = useState(false);
+const[isDaily, setIsDaily] = useState(false);
+const[isWeekly, setIsWeekly] = useState(false);
+const[isMonthly, setIsMonthly] = useState(false);
+const[isAnnual, setIsAnnual] = useState(false);
+
 const [year, setYear] = useState(1);
 const [tax, setTax] = useState(0);
 const [ni, setNi] = useState(0);
@@ -83,6 +88,10 @@ function handleReset(event){
     setPension(0)
     setIsPension(false)
     setIsLoan(false)
+    setIsDaily(false)
+    setIsWeekly(false)
+    setIsMonthly(false)
+    setIsAnnual(false)
     setNetIncome(0);
     event.preventDefault();
 }
@@ -100,6 +109,7 @@ function handleReset(event){
             <option value="2">2024/25</option>
             </select>
         </label>
+       
         <div className='extra-option'>
         <label>
         Workplace Pension:
@@ -116,32 +126,63 @@ function handleReset(event){
 
             </select>
             </label>
+                </div>
+                <h5>Choose your Income Input</h5>
+                <div className='extra-option'>
+                <label>
+        Daily Income:
+        <select onChange={(e)=>setIsDaily(e.target.value)} value={isDaily}>
+        <option value="false">No</option>
+            <option value="true">Yes</option>
+            </select>
+            </label>
+            <label>
+        Weekly Income:
+        <select onChange={(e)=>setIsWeekly(e.target.value)} value={isWeekly}>
+        <option value="false">No</option>
+            <option value="true">Yes</option>
+            </select>
+            </label>
+            <label>
+       Monthly Income:
+        <select onChange={(e)=>setIsMonthly(e.target.value)} value={isMonthly}>
+        <option value="false">No</option>
+            <option value="true">Yes</option>
+            </select>
+            </label>
+            <label>
+        Annual Income:
+        <select onChange={(e)=>setIsAnnual(e.target.value)} value={isAnnual}>
+        <option value="false">No</option>
+            <option value="true">Yes</option>
+            </select>
+            </label>
+                </div>  
+                <label className={isDaily? 'dailyShow': 'dailyHide'}>
            
-                </div>       
-        <label>
-        Weekly Hours:
-        <br />
+    
+           <input type="number" placeholder="Enter Hourly Rate..." onChange={(e)=>setHrsIncome(e.target.value)} value={hrsIncome} />
+       </label>     
+        <label className={isDaily? 'dailyShow': 'dailyHide'}>
+       
+      
             <input type="number" placeholder="Enter Weekly Hours..." onChange={(e)=>setHrsPerWeek(e.target.value)} value={hrsPerWeek} />
            
         </label>
-        <label>
-            Hourly Rate:
-            <br />
-            <input type="number" placeholder="Enter Hourly Income..." onChange={(e)=>setHrsIncome(e.target.value)} value={hrsIncome} />
-        </label>
-        Or
-        <label>Weekly Income: 
-        <br />
+       
+      
+        <label className={isWeekly? 'weeklyShow': 'weeklyHide'}> 
+     
         <input type="number" placeholder="Enter Weekly Income..." onChange={(e)=>setWeeklyIncome(e.target.value)} value={weeklyIncome} />
         </label>
-        Or
-        <label>Monthly Income:
-        <br /> 
+     
+        <label className={isMonthly? 'monthlyShow':'monthlyHide'}>
+    
         <input type="number" placeholder="Enter Monthly Income..." onChange={(e)=>setMonthlyIncome(e.target.value)} value={monthlyIncome} />
         </label>
-        Or
-        <label>Annual Income: 
-        <br />
+   
+        <label className={isAnnual? 'annualShow':'annualHide'}>
+    
         <input type="number" placeholder="Enter Annual Income..." onChange={(e)=>setAnnualIncome(e.target.value)} value={annualIncome} />
         </label>
        
