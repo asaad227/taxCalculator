@@ -4,17 +4,22 @@ import { taxCalculator, nationalInsurance, studentLoan } from '../lib';
 
 
 export default function TotalTax() {
-const [tax, setTax] = useState(0);
-const [ni, setNi] = useState(0);
 const [hrsIncome, setHrsIncome] = useState("");
 const [hrsPerWeek, setHrsPerWeek] = useState("");
-const[totalTax, setTotalTax] = useState(0);
-const [educationLoan, setEducationLoan] = useState(0);
-const [netIncome, setNetIncome] = useState(0);
 const [monthlyIncome, setMonthlyIncome] = useState("");
 const [weeklyIncome, setWeeklyIncome] = useState("");
-const [annualIncome, setAnnualIncome] = useState(0);
+const [annualIncome, setAnnualIncome] = useState("");
+const [educationLoan, setEducationLoan] = useState(0);
+const [isLoan, setIsLoan] = useState(false);
 const [year, setYear] = useState(1);
+const [tax, setTax] = useState(0);
+const [ni, setNi] = useState(0);
+const[totalTax, setTotalTax] = useState(0);
+const [netIncome, setNetIncome] = useState(0);
+
+
+
+
 
 
 function handleTotalIncome(event){
@@ -44,6 +49,10 @@ function handleTax(event){
     let totalTax = taxCalculator(1, totalIncome);
     let totalNi = nationalInsurance(1, totalIncome);
     let totalStudentLoan = studentLoan(1, totalIncome);
+    if(!isLoan){
+        totalStudentLoan = 0;
+    }
+
     let netIncome = annualIncome - totalTax - totalNi - totalStudentLoan;
     setTax(totalTax);
     setNi(totalNi);
@@ -55,9 +64,9 @@ function handleTax(event){
 }
 
 function handleReset(event){
-    setAnnualIncome(0);
-    setMonthlyIncome(0);
-    setWeeklyIncome(0);
+    setAnnualIncome("");
+    setMonthlyIncome("");
+    setWeeklyIncome("");
     setHrsIncome("");
     setHrsPerWeek("");
     setTax(0);
@@ -82,7 +91,14 @@ function handleReset(event){
             <option value="2">2024/25</option>
             </select>
         </label>
-        
+        <label>
+        Student Loan:
+        <select onChange={(e)=>setIsLoan(e.target.value)} value={isLoan}>
+        <option value="false">No</option>
+            <option value="true">Yes</option>
+
+            </select>
+            </label>        
         <label>
         Weekly Hours:
         <br />
@@ -115,7 +131,7 @@ function handleReset(event){
        
         <div className='flex-container result'>
         <h2>Results</h2>
-        <p>Total Annual Income: <span className='income'>£{annualIncome? annualIncome:"0.00"}</span></p>
+        <p>Total Annual Income: <span className='income'>£{(annualIncome/1).toFixed(2)}</span></p>
         <p>Total Monthly Income: <span className='income'>£{(annualIncome/12).toFixed(2)}</span></p>
         <p>Total Weekly Income: <span className='income'>£{(annualIncome/52).toFixed(2)}</span></p>
        
