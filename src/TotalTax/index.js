@@ -80,6 +80,9 @@ function handleReset(event){
     setNi(0);
     setTotalTax(0);
     setEducationLoan(0);
+    setPension(0)
+    setIsPension(false)
+    setIsLoan(false)
     setNetIncome(0);
     event.preventDefault();
 }
@@ -152,8 +155,8 @@ function handleReset(event){
         <p>Total Weekly Income: <span className='income'>£{(annualIncome/52).toFixed(2)}</span></p>
        
  
-        <p>Income Tax: <span className='total-tax'>£{tax.toFixed(2)}</span></p>
-        <p>National Insurance: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
+        <p>Tax: <span className='total-tax'>£{tax.toFixed(2)}</span></p>
+        <p>NI: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
         <div className='small-divider'></div>
         <p>Total Tax: <span className='tax'>£{totalTax.toFixed(2)}</span></p>
         <p className={isPension? 'pension':'pensionHide'}>Statutory Pension: <span>£{pension.toFixed(2)}</span></p>
