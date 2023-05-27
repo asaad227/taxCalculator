@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import "./index.css"
-import { taxCalculator, nationalInsurance, studentLoan } from '../lib';
+import { taxCalculator, nationalInsurance, studentLoan, statutoryPension } from '../lib';
 
 
 export default function TotalTax() {
@@ -10,6 +10,8 @@ const [monthlyIncome, setMonthlyIncome] = useState("");
 const [weeklyIncome, setWeeklyIncome] = useState("");
 const [annualIncome, setAnnualIncome] = useState("");
 const [educationLoan, setEducationLoan] = useState(0);
+const[pension, setPension] = useState(0);
+const[isPension, setIsPension] = useState(false);
 const [isLoan, setIsLoan] = useState(false);
 const [year, setYear] = useState(1);
 const [tax, setTax] = useState(0);
@@ -49,15 +51,20 @@ function handleTax(event){
     let totalTax = taxCalculator(1, totalIncome);
     let totalNi = nationalInsurance(1, totalIncome);
     let totalStudentLoan = studentLoan(1, totalIncome);
+    let totalPension = statutoryPension(1, totalIncome);
+    if(!isPension){
+        totalPension = 0;
+    }
     if(!isLoan){
         totalStudentLoan = 0;
     }
 
-    let netIncome = annualIncome - totalTax - totalNi - totalStudentLoan;
+    let netIncome = annualIncome - totalTax - totalNi - totalStudentLoan - totalPension;
     setTax(totalTax);
     setNi(totalNi);
     setTotalTax(totalTax + totalNi);
     setEducationLoan(totalStudentLoan);
+    setPension(totalPension);
     setNetIncome(netIncome);
     event.preventDefault();
 
@@ -81,8 +88,7 @@ function handleReset(event){
 
   return (
     <div className='main'>
-        <h1>UK Tax Calculator</h1>
-        <h2>Enter your annual income below</h2>
+        <h1>England Personal Tax Calculator</h1>
         <form onSubmit={handleTotalIncome}>
         <label>
         Tax Year:
@@ -91,6 +97,14 @@ function handleReset(event){
             <option value="2">2024/25</option>
             </select>
         </label>
+        <div className='extra-option'>
+        <label>
+        Workplace Pension:
+            <select onChange={(e)=>setIsPension(e.target.value)} value={isPension}>
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+                </select>
+                </label> 
         <label>
         Student Loan:
         <select onChange={(e)=>setIsLoan(e.target.value)} value={isLoan}>
@@ -98,7 +112,9 @@ function handleReset(event){
             <option value="true">Yes</option>
 
             </select>
-            </label>        
+            </label>
+           
+                </div>       
         <label>
         Weekly Hours:
         <br />
@@ -140,6 +156,7 @@ function handleReset(event){
         <p>National Insurance: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
         <div className='small-divider'></div>
         <p>Total Tax: <span className='tax'>£{totalTax.toFixed(2)}</span></p>
+        <p>Statutory Pension: <span>£{pension.toFixed(2)}</span></p>
         <p>Student Loan: <span>£{educationLoan.toFixed(2)}</span></p>
         <div className='divider'></div>
         <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>

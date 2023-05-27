@@ -131,7 +131,23 @@
     padding:0;
     color: black
   }
-  
+  .extra-option{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding:0;
+    color: black
+  }
+.extra-option select{
+    width: 4vw;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin: 10px 5px;
+    }
+
+   
   
   @media screen and (max-width: 600px) {
     .main h1 {
@@ -159,6 +175,13 @@
       border-radius: 4px;
       margin: 10px 5px;
     }
+    .extra-option select{
+      width: 17vw;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      margin: 10px 5px;
+      }
     .total-tax{
       margin: 0 17vw;
     }

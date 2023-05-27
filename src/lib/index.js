@@ -35,6 +35,23 @@ export function nationalInsurance(year, income){
  
  }
  
+ export function statutoryPension(year, income){
+        const rates = {
+            basicRate: 0.05,
+            higherRate: 0.09,
+        }
+            let totalPension = 0;
+            if (year === 1) {
+                if (income > 12576 && income <= 50268) {
+                    totalPension = (income - 12576) * rates.basicRate;
+                } else if (income > 50268) {
+                    totalPension = (income - 50250) * rates.higherRate + 37692 * rates.basicRate;
+                }
+            }
+            return totalPension;
+
+    }
+    
 export function studentLoan(year, income){
         let studentLoan = 0;
         if (year === 1) {
