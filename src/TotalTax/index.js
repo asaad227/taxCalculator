@@ -80,6 +80,7 @@ function handleReset(event){
     setNi(0);
     setTotalTax(0);
     setEducationLoan(0);
+    setPension(0)
     setNetIncome(0);
     event.preventDefault();
 }
