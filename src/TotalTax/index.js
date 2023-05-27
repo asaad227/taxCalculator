@@ -156,8 +156,8 @@ function handleReset(event){
         <p>National Insurance: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
         <div className='small-divider'></div>
         <p>Total Tax: <span className='tax'>£{totalTax.toFixed(2)}</span></p>
-        <p>Statutory Pension: <span>£{pension.toFixed(2)}</span></p>
-        <p>Student Loan: <span>£{educationLoan.toFixed(2)}</span></p>
+        <p className={isPension? 'pension':'pensionHide'}>Statutory Pension: <span>£{pension.toFixed(2)}</span></p>
+        <p className={isLoan? 'loan':'loanHide'}>Student Loan: <span>£{educationLoan.toFixed(2)}</span></p>
         <div className='divider'></div>
         <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
         <p>Net Monthly Income: <span className='income'>£{(netIncome/12).toFixed(2)}</span></p>
