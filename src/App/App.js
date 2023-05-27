@@ -24,30 +24,25 @@ function App() {
     setYear(event.target.value);
   }
 function incomeTotal(event) {
-  if(totalMonthlyIncome > 0 && incomeByHour > 0 && hrsPerWeek > 0) {
-    alert('Please enter either monthly income or hourly income, not both');
+  if(totalMonthlyIncome > 0 && incomeByHour > 0 && hrsPerWeek > 0 && personalIncome > 0) {
+    alert('Please enter either hourly or monthly or annual income, not all three.');
   }
-  if(totalMonthlyIncome > 0 && totalMonthlyIncome < 1000000) {
+  else if(totalMonthlyIncome > 0 && totalMonthlyIncome < 1000000) {
     setPersonalIncome((totalMonthlyIncome * 12).toFixed(2));
+
   } else if (incomeByHour > 0 && incomeByHour < 1000000 && hrsPerWeek > 0 && hrsPerWeek < 168) {
     setPersonalIncome((incomeByHour * hrsPerWeek * 52).toFixed(2));
-  }
-setHrsPerWeek("");
-setIncomeByHour("");
-setTotalMonthlyIncome("");
-  event.preventDefault();
-}
+  } else if (personalIncome > 0 && personalIncome < 1000000) {
+    setPersonalIncome(personalIncome);
+  } 
 
-
- 
-  function handleSubmit(event) {
+if (personalIncome > 0 && personalIncome < 1000000) {
     let nationalInsuranceAm = nationalInsurance(1, personalIncome);
     let incomeTax = taxCalculator(1, personalIncome);
     let totalTax = nationalInsuranceAm + incomeTax;
     let netIncome = personalIncome - totalTax;
     let monthlyIncome = netIncome/ 12;
     let weeklyIncome = netIncome / 52;
-    
     setNetIncome(netIncome);
     setMonthlyIncome(monthlyIncome);
     setWeeklyIncome(weeklyIncome);
@@ -56,10 +51,13 @@ setTotalMonthlyIncome("");
     setData(totalTax);
     setAnnualIncome(personalIncome);
     setPersonalIncome("");
-  event.preventDefault();
+    setHrsPerWeek("");
+    setIncomeByHour("");
+    setTotalMonthlyIncome("");
+    event.preventDefault();
   }
 
-
+}
 
   
   
@@ -67,6 +65,14 @@ setTotalMonthlyIncome("");
     <div className="App">
      <h1>Tax Calculator UK</h1>
      <form onSubmit={incomeTotal}>
+     <label>
+          Tax Year:
+                    <select value={year} onChange={handleChange}>
+          
+            <option value="1">2023/24</option>
+            <option value="2">2024/25</option>
+          </select>
+        </label>
       <h2>Income</h2>
      <label>
       Hourly Income:
@@ -83,24 +89,11 @@ setTotalMonthlyIncome("");
           <input type="number" step='.01' value={totalMonthlyIncome} onChange={(e)=> setTotalMonthlyIncome(e.target.value)} placeholder='Monthly income here...' />
   
       </label>
-     
-     
-      <input type="submit" value="Total Income" />
-      </form>
-     
-      <form onSubmit={handleSubmit}>
-      <h2>Annual Income</h2>
-     
       <label>
-          Tax Year:
-                    <select value={year} onChange={handleChange}>
-          
-            <option value="1">2023/24</option>
-            <option value="2">2024/25</option>
-          </select>
-        </label>
-    
+      OR
+      </label>     
         <label>
+          Annual Income:
           <br />
           <input type="number" step='.01' value={personalIncome} onChange={handleChange} placeholder='Annual income here...'/>
         </label>
