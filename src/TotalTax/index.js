@@ -54,6 +54,19 @@ function handleTax(event){
 
 }
 
+function handleReset(event){
+    setAnnualIncome(0);
+    setMonthlyIncome(0);
+    setWeeklyIncome(0);
+    setHrsIncome("");
+    setHrsPerWeek("");
+    setTax(0);
+    setNi(0);
+    setTotalTax(0);
+    setEducationLoan(0);
+    setNetIncome(0);
+    event.preventDefault();
+}
 
 
 
@@ -102,7 +115,9 @@ function handleTax(event){
        
         <div className='flex-container result'>
         <h2>Results</h2>
-        <p>Total Annual Income: <span className='income'>£{annualIncome}</span></p>
+        <p>Total Annual Income: <span className='income'>£{annualIncome? annualIncome:"0.00"}</span></p>
+        <p>Total Monthly Income: <span className='income'>£{(annualIncome/12).toFixed(2)}</span></p>
+        <p>Total Weekly Income: <span className='income'>£{(annualIncome/52).toFixed(2)}</span></p>
        
  
         <p>Income Tax: <span className='total-tax'>£{tax.toFixed(2)}</span></p>
@@ -116,7 +131,10 @@ function handleTax(event){
         <p>Net Weekly Income: <span className='income'>£{(netIncome/52).toFixed(2)}</span></p>
         
         <div className='divider'></div>
+        <span>
         <input type='button' value='Calculate Tax' onClick={handleTax} />
+        <input type='button' value='Reset' onClick={handleReset} />
+    </span>
         </div>
      
     </div>

@@ -41,7 +41,7 @@
   .main form input[type="submit"] {
     background-color: #4CAF50;
     border: none;
-    width: 13.5vw;
+    width: 6.5vw;
     color: white;
     cursor: pointer;
   
@@ -65,11 +65,12 @@
     background-color: #ffffe0;
   }
   .result input[type="button"]{
-     margin: 2vh auto;
+     margin: 2vh 5px;
     background-color: #4CAF50;
     border: none;
+    border-radius: 4px;
     padding: 10px;
-    width: 13.5vw;
+    width: 6.5vw;
     color: white;
     cursor: pointer;
   }
@@ -146,7 +147,7 @@
       width: 58vw;
     }
     .result input[type="button"]{
-      width: 58vw;
+      width: 29vw;
     }
     .flex-container{
       width: 90vw;
