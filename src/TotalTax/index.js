@@ -112,6 +112,9 @@ function handleReset(event){
     <div>
     <div className='main'>
         <h1>UK Personal tax calculator (England):</h1>
+        <span className="material-symbols-outlined cal-sign">
+calculate
+</span>
         <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
         handleSubmit={handleSubmit} isDaily={isDaily}
          isWeekly={isWeekly} isMonthly={isMonthly} isAnnual={isAnnual} 
