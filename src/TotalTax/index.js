@@ -5,7 +5,7 @@ import Form from '../Form';
 
 
 export default function TotalTax() {
-    
+    const [isChecked, setIsChecked] = useState(false);
 const [daily, setDaily] = useState("");
 const [monthlyIncome, setMonthlyIncome] = useState("");
 const [weeklyIncome, setWeeklyIncome] = useState("");
@@ -107,7 +107,7 @@ function handleReset(event){
          setIsAnnual={setIsAnnual} setIsDaily={setIsDaily} setIsMonthly={setIsMonthly} setIsWeekly={setIsWeekly}
             setPension={setPension} pension={pension} setStd={setEducationLoan} std={educationLoan}
             setAnnualy={setAnnualIncome} setMonthly={setMonthlyIncome} setWeekly={setWeeklyIncome} setDaily={setDaily}
-            daily={daily} weekly={weeklyIncome} monthly={monthlyIncome} annualy={annualIncome}
+            daily={daily} weekly={weeklyIncome} monthly={monthlyIncome} annualy={annualIncome} setIsChecked={setIsChecked} isChecked={isChecked}
         
              />
         <div className='flex-container result'>

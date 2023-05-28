@@ -6,6 +6,25 @@ export default function Form({year, setYear, handleSubmit, isDaily, setIsDaily, 
   isMonthly, setIsMonthly, isAnnual, setIsAnnual, 
   daily, setDaily, weekly, setWeekly, monthly, setMonthly, annualy, setAnnualy, isLoan, setIsLoan, isPension, setIsPension}) {
 
+    function handleIsDaily(event){
+        setIsDaily(event.target.value);
+        setIsAnnual(false);
+        setIsMonthly(false);
+        setIsWeekly(false);
+    }
+    function handleIsWeekly(event){
+        setIsWeekly(event.target.value);
+        setIsAnnual(false);
+        setIsMonthly(false);
+        setIsDaily(false);
+    }
+    function handleIsMonthly(event){
+        setIsMonthly(event.target.value);
+        setIsAnnual(false);
+        setIsWeekly(false);
+        setIsDaily(false);
+        
+    }
   return (
     <form onSubmit={handleSubmit}>
     <h2>Year</h2>
@@ -21,19 +40,19 @@ export default function Form({year, setYear, handleSubmit, isDaily, setIsDaily, 
     <h2>Income Selection</h2>
     <label>
     Daily: 
-    <span><input type="checkbox" onChange={(e)=>setIsDaily(e.target.checked)} value={isDaily} /></span>
+    <span><input type="checkbox" checked={isDaily} onChange={handleIsDaily} value={isDaily} /></span>
     </label>
     <label>
     Weekly:
-    <span><input type="checkbox" onChange={(e)=>setIsWeekly(e.target.checked)} value={isWeekly} /></span>
+    <span><input type="checkbox" checked={isWeekly} onChange={handleIsWeekly} value={isWeekly} /></span>
     </label>
     <label>
     Monthly: 
-    <span><input type="checkbox" onChange={(e)=>setIsMonthly(e.target.checked)} value={isMonthly} /></span>
+    <span><input type="checkbox" checked={isMonthly} onChange={handleIsMonthly} value={isMonthly} /></span>
     </label>
     <label>
     Annualy:    
-    <span><input type="checkbox" onChange={(e)=>setIsAnnual(e.target.checked)} value={isAnnual} defaultChecked/></span>
+    <span><input type="checkbox" checked={isAnnual} onChange={(e)=>setIsAnnual(e.target.checked)} value={isAnnual} defaultChecked/></span>
     </label>
     <IncomeIn isDaily={isDaily} isWeekly={isWeekly} 
     isMonthly={isMonthly} isAnnual={isAnnual} daily={daily} 
