@@ -109,6 +109,7 @@ function handleReset(event){
 
 
   return (
+    <div>
     <div className='main'>
         <h1>England Personal Tax Calculator</h1>
         <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
@@ -150,7 +151,23 @@ function handleReset(event){
         <input type='button' value='Reset' onClick={handleReset} />
     </span>
         </div>
-     
+        </div>
+        <aside>
+            <h2>How to use this calculator:</h2>
+            <div className='divider'></div>
+            <p>Enter your income in the input field and select the tax year. You can enter your income in hourly, daily, weekly, monthly or annualy. 
+            If you enter your income in hourly, you will also need to enter the number of hours you work per week. 
+            If you enter your income in daily, by default 5 days per week. If you enter your income in weekly, 
+            by default 52 week per year. If you enter your income in monthly, by default 12 months you work per year. 
+            If you enter your income in annualy, you will not need to enter any other information. 
+            You can also select whether you want to include student loan and pension in your calculation. If you select student loan, it will take default rate into calculation. 
+            
+            If you select pension, it will take default amount into calculation.</p>
+        </aside>
+        <footer>
+            <p>Disclaimer: This is a simple tax calculator and should not be used for any official purposes.</p>
+
+        </footer>
     </div>
   )
 }
