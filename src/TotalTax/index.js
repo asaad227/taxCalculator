@@ -91,7 +91,7 @@ function handleReset(event){
     setIsDaily(false)
     setIsWeekly(false)
     setIsMonthly(false)
-    setIsAnnual(false)
+    setIsAnnual(true)
     setNetIncome(0);
     event.preventDefault();
 }
