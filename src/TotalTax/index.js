@@ -132,15 +132,15 @@ function handleReset(event){
        <div className='divider'></div>
        <h2>Deductions</h2>
       
-        <p>Tax: <span className='total-tax'>£{tax.toFixed(2)}</span></p>
-        <p>NI: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
+        <p>Tax(Yearly): <span className='total-tax'>£{tax.toFixed(2)}</span></p>
+        <p>NI(Yearly): <span className='total-tax'>£{ni.toFixed(2)}</span></p>
        <div className='small-divider'></div>
-        <p>Total Tax: <span className='total-tax'>£{totalTax.toFixed(2)}</span></p>
+        <p>Total Tax(Yearly): <span className='total-tax'>£{totalTax.toFixed(2)}</span></p>
         <p className={isPension? 'pension':'pensionHide'}>Pension: <span className='total-tax'>£{pension.toFixed(2)}</span></p>
         <p className={isLoan? 'loan':'loanHide'}>Std Loan: <span className='total-tax'>£{educationLoan.toFixed(2)}</span></p>
         <div className='divider'></div>
         <h2>Net Income</h2>
-        <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
+        <p>Net Yearly Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
         <p>Net Monthly Income: <span className='income'>£{(netIncome/12).toFixed(2)}</span></p>
         <p>Net Weekly Income: <span className='income'>£{(netIncome/52).toFixed(2)}</span></p>
         

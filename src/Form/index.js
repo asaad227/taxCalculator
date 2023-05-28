@@ -44,7 +44,7 @@ function handleHrs(event){
     }
   return (
     <form onSubmit={handleSubmit}>
-    <h2>Year</h2>
+    <h2>Personal Income</h2>
     <label>
     Tax Year:
         <select value={year} onChange={(e)=>setYear(e.target.value)}>
@@ -52,9 +52,9 @@ function handleHrs(event){
             <option value="2">2024/25</option>
             </select>
     </label>
-   
-    
-    <h2>Income Selection</h2>
+    <br />
+    <br />
+
     <label>
     Hourly:
     <span><input type="checkbox" checked={isHrs} onChange={handleHrs} value={isHrs} /></span>

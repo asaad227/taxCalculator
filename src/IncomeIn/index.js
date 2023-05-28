@@ -4,8 +4,8 @@ import "./index.css"
 export default function IncomeIn({isDaily, isWeekly, isMonthly, isAnnual, setDaily, setWeekly, 
     setMonthly, setAnnualy, daily, weekly, monthly, annualy, isHrs, setHrsPerWeek, setIncomeByHour, incomeByHour, hrsPerWeek}) {
   return (
-    <label>
-    <h2>Income Input</h2>
+    <div>
+    <br />
     <label className={isHrs? 'hrsShow':'hrsHide'}>
       Hourly Income:
           <br />
@@ -28,6 +28,6 @@ export default function IncomeIn({isDaily, isWeekly, isMonthly, isAnnual, setDai
     Annual Income:
         <input type="number" step='.01' placeholder='Enter here...' value={annualy} onChange={(e)=>setAnnualy(e.target.value)} />
     </label>
-    </label>
+    </div>
   )
 }
