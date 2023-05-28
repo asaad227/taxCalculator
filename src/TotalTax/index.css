@@ -2,209 +2,108 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-  }
-  
-  .main h1 {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-    width: 50vw;
     align-items: center;
-    background-color: #4CAF50;
-    color: white;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  
   }
-  
-  .main form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    width: 50vw;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    background-color:#ffffe0;
-  }
-  
-  .main form input {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
+  .main h1{
+    margin: 10px 0;
     padding: 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
   }
-    
- 
 
+  .main h1 span{
+    font-size: 0.5em;
+  }
 
-  
-  .main form input[type="submit"] {
-    background-color: #4CAF50;
-    border: none;
-    width: 6.5vw;
-    color: white;
-    cursor: pointer;
-  
+  .main h2{
+    margin: 10px 0;
+    padding: 0;
   }
-  .main form input[type="submit"]:hover {
-    background-color: #558a57;
+
+  .main h2 span{
+    font-size: 0.5em;
   }
+  .result{
   
-  .main form input:focus {
-    outline: none;
-  }
-  
-  .flex-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    text-align: center;
+    align-items: center;
     width: 50vw;
     margin: 20px auto;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #ffffe0;
   }
-  .result input[type="button"]{
-     margin: 2vh 5px;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 6.5vw;
-    color: white;
-    cursor: pointer;
+  p span {
+  font-weight: bold;
+  width: 15vw;
+    float: right;
+  }
+.pension, .loan{
+  display: block;
+  
+}
+.small-divider{
+  border-bottom: 1px solid #837c7c;
+  margin: 5px 50px;
+  padding: 0;
+}
+.pensionHide, .loanHide{
+  display: none;
+}
+
+input[type="button"] {
+  width: 12vw;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin: 10px 5px;
+}
+.divider{
+ border-bottom: 2px solid #837c7c;
+ margin: 10px 15px;
+}
+
+.total-tax{
+  color: red;
+margin: 0 50px;
+}
+.tax{
+  margin: 0 10px;
+  text-align: left;
+  color: red;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 600px) {
+  .result{
+    width: 90vw;
   }
   .result p{
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 10px;
-    padding:0;
-    color: black
+    width: 85vw;
   }
-   .divider{
-    border-bottom: 1px solid #837c7c;
-    margin: 0 10px;
-    padding: 0;
+  input[type="button"] {
+    width: 40vw;
   }
+  .pension, .loan{
+    width: 100vw;
+  }
+  .pensionHide, .loanHide{
+    width: 100vw;
+  }
+  .tax{
+    margin: 0 50px;
+    text-align: left;
+    color: red;
+    font-weight: bold;
+  }
+  p span {
+    font-weight: bold;
+  width: 12vw;
+    float: right;
+  }
+
   .small-divider{
     border-bottom: 1px solid #837c7c;
-    margin: 0 10vw;
-    padding: 0;
-  }
-  .total-tax{
-  margin: 0 10vw;
-  }
-  .no-divider{
-    border-bottom: none;
-    margin: 10px auto;
-    padding: 0;
-    }
-  .result p .income{
-    color: #3a5f3a;;
-    font-weight: bold;
-  
-  }
-  .result h2{
-    color: #3a5f3a;
-    font-weight: bold;
-    margin: 10px auto;
-    padding: 0;
-  }
-  
-  .result p .tax{
-    color:red;
-    font-weight: bold;
-    
-  }
-  select{
-    width: 6vw;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin: 10px 5px;
-  }
-  
-  .total{
-    display: flex;
-    flex-direction: column;
-    margin: 0 48px;
-    padding:0;
-    color: black
-  }
-  .extra-option{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding:0;
-    color: black
-  }
-.extra-option select{
-
-    width: 4vw;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin: 10px 5px;
-    }
-.result .pension, .result .loan{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10px;
-    padding:0;
-    color: black
-  }
-  .result .pensionHide, .result .loanHide{
-    display: none;
-  }
-   .annualShow .monthlyShow, .weeklyShow, .dailyShow{
-    display: flex;
-    }
-    .annualHide, .monthlyHide, .weeklyHide, .dailyHide{
-    display: none;
-    }
-  
-  @media screen and (max-width: 600px) {
-    .main h1 {
-      width: 90vw;
-    }
-    .main form {
-      width: 90vw;
-    }
-    .main form input {
-      width: 52vw;
-    }
-    .main form input[type="submit"] {
-      width: 58vw;
-    }
-    .result input[type="button"]{
-      width: 29vw;
-    }
-    .flex-container{
-      width: 90vw;
-    }
-    select{
-      width: 27vw;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      margin: 10px 5px;
-    }
-    .extra-option select{
-      width: 17vw;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      margin: 10px 5px;
-      }
-    .total-tax{
-      margin: 0 17vw;
-    }
-  }
-    
+    margin: 2px 60px;
+   }
+}
   

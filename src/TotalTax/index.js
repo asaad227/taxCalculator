@@ -1,11 +1,12 @@
 import React,{useState} from 'react';
 import "./index.css"
 import { taxCalculator, nationalInsurance, studentLoan, statutoryPension } from '../lib';
+import Form from '../Form';
 
 
 export default function TotalTax() {
-const [hrsIncome, setHrsIncome] = useState("");
-const [hrsPerWeek, setHrsPerWeek] = useState("");
+    
+const [daily, setDaily] = useState("");
 const [monthlyIncome, setMonthlyIncome] = useState("");
 const [weeklyIncome, setWeeklyIncome] = useState("");
 const [annualIncome, setAnnualIncome] = useState("");
@@ -16,7 +17,7 @@ const [isLoan, setIsLoan] = useState(false);
 const[isDaily, setIsDaily] = useState(false);
 const[isWeekly, setIsWeekly] = useState(false);
 const[isMonthly, setIsMonthly] = useState(false);
-const[isAnnual, setIsAnnual] = useState(false);
+const[isAnnual, setIsAnnual] = useState(true);
 
 const [year, setYear] = useState(1);
 const [tax, setTax] = useState(0);
@@ -29,8 +30,8 @@ const [netIncome, setNetIncome] = useState(0);
 
 
 
-function handleTotalIncome(event){
-   if(annualIncome > 0 && monthlyIncome > 0 && weeklyIncome > 0 && hrsIncome > 0) {
+function handleSubmit(event){
+   if(annualIncome > 0 && monthlyIncome > 0 && weeklyIncome > 0 && daily > 0) {
         alert('Please enter either weekly or monthly or annual income, not all three.');
     }
     else if(annualIncome > 0 && annualIncome < 1000000) {
@@ -42,10 +43,9 @@ function handleTotalIncome(event){
     } else if (weeklyIncome > 0 && weeklyIncome < 1000000) {
         setAnnualIncome((weeklyIncome * 52).toFixed(2));
         setWeeklyIncome(0);
-    }else if (hrsIncome > 0 && hrsIncome < 1000000 && hrsPerWeek > 0 && hrsPerWeek < 168) {
-        setAnnualIncome((hrsIncome * 52 * hrsPerWeek).toFixed(2));
-        setHrsIncome(0);
-        setHrsPerWeek(0);
+    }else if (daily > 0 && daily < 1000000) {
+        setAnnualIncome((daily * 5 * 52).toFixed(2));
+        setDaily(0);
     }
    
     event.preventDefault();
@@ -79,8 +79,8 @@ function handleReset(event){
     setAnnualIncome("");
     setMonthlyIncome("");
     setWeeklyIncome("");
-    setHrsIncome("");
-    setHrsPerWeek("");
+    setDaily("");
+    setYear(1);
     setTax(0);
     setNi(0);
     setTotalTax(0);
@@ -101,89 +101,31 @@ function handleReset(event){
   return (
     <div className='main'>
         <h1>England Personal Tax Calculator</h1>
-        <form onSubmit={handleTotalIncome}>
-        <label>
-        Tax Year:
-            <select onChange={(e)=>setYear(e.target.value)} value={year}>
-            <option value="1">2023/24</option>
-            <option value="2">2024/25</option>
-            </select>
-        </label>
-       
-        <div className='extra-option'>
-        <label>
-        Workplace Pension:
-           <input type="checkbox" onChange={(e)=>setIsPension(e.target.checked)} value={isPension} />
-        </label>
-        <label>
-        Student Loan:
-      <input type="checkbox" onChange={(e)=>setIsLoan(e.target.checked)} value={isLoan} />
-            </label>
-                </div>
-                <h5>Choose your Income Input</h5>
-                <div className='extra-option'>
-                <label>
-        Daily Income:
-        <input type="checkbox" onChange={(e)=>setIsDaily(e.target.checked)} value={isDaily} />
-        </label>
-            <label>
-        Weekly Income:
-        <input type="checkbox" onChange={(e)=>setIsWeekly(e.target.checked)} value={isWeekly} />
-            </label>
-            <label>
-       Monthly Income:
-         <input type="checkbox" onChange={(e)=>setIsMonthly(e.target.checked)} value={isMonthly} />
-            </label>
-            <label>
-        Annual Income:
-        <input type="checkbox" onChange={(e)=>setIsAnnual(e.target.checked)} value={isAnnual} />
-            </label>
-                </div>  
-                <label className={isDaily? 'dailyShow': 'dailyHide'}>
-           
-    
-           <input type="number" placeholder="Enter Hourly Rate..." onChange={(e)=>setHrsIncome(e.target.value)} value={hrsIncome} />
-       </label>     
-        <label className={isDaily? 'dailyShow': 'dailyHide'}>
-       
-      
-            <input type="number" placeholder="Enter Weekly Hours..." onChange={(e)=>setHrsPerWeek(e.target.value)} value={hrsPerWeek} />
-           
-        </label>
-       
-      
-        <label className={isWeekly? 'weeklyShow': 'weeklyHide'}> 
-     
-        <input type="number" placeholder="Enter Weekly Income..." onChange={(e)=>setWeeklyIncome(e.target.value)} value={weeklyIncome} />
-        </label>
-     
-        <label className={isMonthly? 'monthlyShow':'monthlyHide'}>
-    
-        <input type="number" placeholder="Enter Monthly Income..." onChange={(e)=>setMonthlyIncome(e.target.value)} value={monthlyIncome} />
-        </label>
-   
-        <label className={isAnnual? 'annualShow':'annualHide'}>
-    
-        <input type="number" placeholder="Enter Annual Income..." onChange={(e)=>setAnnualIncome(e.target.value)} value={annualIncome} />
-        </label>
-       
-        <input type="submit" value="Calculate" />
-        </form>
-       
+        <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
+        handleSubmit={handleSubmit} isDaily={isDaily}
+         isWeekly={isWeekly} isMonthly={isMonthly} isAnnual={isAnnual} 
+         setIsAnnual={setIsAnnual} setIsDaily={setIsDaily} setIsMonthly={setIsMonthly} setIsWeekly={setIsWeekly}
+            setPension={setPension} pension={pension} setStd={setEducationLoan} std={educationLoan}
+            setAnnualy={setAnnualIncome} setMonthly={setMonthlyIncome} setWeekly={setWeeklyIncome} setDaily={setDaily}
+            daily={daily} weekly={weeklyIncome} monthly={monthlyIncome} annualy={annualIncome}
+        
+             />
         <div className='flex-container result'>
-        <h2>Results</h2>
+        <h2>Gross Income</h2>
         <p>Total Annual Income: <span className='income'>£{(annualIncome/1).toFixed(2)}</span></p>
         <p>Total Monthly Income: <span className='income'>£{(annualIncome/12).toFixed(2)}</span></p>
         <p>Total Weekly Income: <span className='income'>£{(annualIncome/52).toFixed(2)}</span></p>
-       
- 
+       <div className='divider'></div>
+       <h2>Deductions</h2>
+      
         <p>Tax: <span className='total-tax'>£{tax.toFixed(2)}</span></p>
         <p>NI: <span className='total-tax'>£{ni.toFixed(2)}</span></p>
-        <div className='small-divider'></div>
-        <p>Total Tax: <span className='tax'>£{totalTax.toFixed(2)}</span></p>
-        <p className={isPension? 'pension':'pensionHide'}>Statutory Pension: <span>£{pension.toFixed(2)}</span></p>
-        <p className={isLoan? 'loan':'loanHide'}>Student Loan: <span>£{educationLoan.toFixed(2)}</span></p>
+       <div className='small-divider'></div>
+        <p>Total Tax: <span className='total-tax'>£{totalTax.toFixed(2)}</span></p>
+        <p className={isPension? 'pension':'pensionHide'}>Pension: <span className='total-tax'>£{pension.toFixed(2)}</span></p>
+        <p className={isLoan? 'loan':'loanHide'}>Std Loan: <span className='total-tax'>£{educationLoan.toFixed(2)}</span></p>
         <div className='divider'></div>
+        <h2>Net Income</h2>
         <p>Net Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
         <p>Net Monthly Income: <span className='income'>£{(netIncome/12).toFixed(2)}</span></p>
         <p>Net Weekly Income: <span className='income'>£{(netIncome/52).toFixed(2)}</span></p>
