@@ -5,13 +5,16 @@ import Form from '../Form';
 
 
 export default function TotalTax() {
-    const [isChecked, setIsChecked] = useState(false);
+const [isChecked, setIsChecked] = useState(false);
+const [incomeByHour, setIncomeByHour] = useState("");
+const [hrsPerWeek, setHrsPerWeek] = useState("");
 const [daily, setDaily] = useState("");
 const [monthlyIncome, setMonthlyIncome] = useState("");
 const [weeklyIncome, setWeeklyIncome] = useState("");
 const [annualIncome, setAnnualIncome] = useState("");
 const [educationLoan, setEducationLoan] = useState(0);
 const[pension, setPension] = useState(0);
+const [isHrs, setIsHrs] = useState(false);
 const[isPension, setIsPension] = useState(false);
 const [isLoan, setIsLoan] = useState(false);
 const[isDaily, setIsDaily] = useState(false);
@@ -31,21 +34,25 @@ const [netIncome, setNetIncome] = useState(0);
 
 
 function handleSubmit(event){
-   if(annualIncome > 0 && monthlyIncome > 0 && weeklyIncome > 0 && daily > 0) {
+   if(annualIncome > 0 && monthlyIncome > 0 && weeklyIncome > 0 && daily > 0 && incomeByHour > 0 && hrsPerWeek > 0) {
         alert('Please enter either weekly or monthly or annual income, not all three.');
     }
     else if(annualIncome > 0 && annualIncome < 1000000) {
             setAnnualIncome(annualIncome);   
     } else if (monthlyIncome > 0 && monthlyIncome < 1000000) {
             setAnnualIncome((monthlyIncome * 12).toFixed(2));
-            setMonthlyIncome(0);
+            setMonthlyIncome("");
    
     } else if (weeklyIncome > 0 && weeklyIncome < 1000000) {
         setAnnualIncome((weeklyIncome * 52).toFixed(2));
-        setWeeklyIncome(0);
+        setWeeklyIncome("");
     }else if (daily > 0 && daily < 1000000) {
         setAnnualIncome((daily * 5 * 52).toFixed(2));
-        setDaily(0);
+        setDaily("");
+    }else if (incomeByHour > 0 && incomeByHour < 1000000 && hrsPerWeek > 0 && hrsPerWeek < 168) {
+        setAnnualIncome((incomeByHour * hrsPerWeek * 52).toFixed(2));
+        setIncomeByHour("");
+        setHrsPerWeek("");
     }
    
     event.preventDefault();
@@ -80,6 +87,8 @@ function handleReset(event){
     setMonthlyIncome("");
     setWeeklyIncome("");
     setDaily("");
+    setIncomeByHour("");
+    setHrsPerWeek("");
     setYear(1);
     setTax(0);
     setNi(0);
@@ -92,6 +101,7 @@ function handleReset(event){
     setIsWeekly(false)
     setIsMonthly(false)
     setIsAnnual(true)
+    setIsHrs(false);
     setNetIncome(0);
     event.preventDefault();
 }
@@ -107,7 +117,11 @@ function handleReset(event){
          setIsAnnual={setIsAnnual} setIsDaily={setIsDaily} setIsMonthly={setIsMonthly} setIsWeekly={setIsWeekly}
             setPension={setPension} pension={pension} setStd={setEducationLoan} std={educationLoan}
             setAnnualy={setAnnualIncome} setMonthly={setMonthlyIncome} setWeekly={setWeeklyIncome} setDaily={setDaily}
-            daily={daily} weekly={weeklyIncome} monthly={monthlyIncome} annualy={annualIncome} setIsChecked={setIsChecked} isChecked={isChecked}
+            daily={daily} 
+            weekly={weeklyIncome} monthly={monthlyIncome} 
+            annualy={annualIncome} setIsChecked={setIsChecked} isChecked={isChecked}
+            setHrsPerWeek={setHrsPerWeek} setIncomeByHour={setIncomeByHour} incomeByHour={incomeByHour} hrsPerWeek={hrsPerWeek}
+            isHrs={isHrs} setIsHrs={setIsHrs}
         
              />
         <div className='flex-container result'>

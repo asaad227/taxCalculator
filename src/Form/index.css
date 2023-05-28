@@ -13,8 +13,15 @@ form input[type="submit"] {
   border-radius: 4px;
   margin: 10px 5px;
 }
-
-.annualShow, .monthlyShow, .weeklyShow, .dailyShow {
+.hrsShow {
+  display: inline;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    width: 25vw;
+}
+.annualShow, .monthlyShow, .weeklyShow, .dailyShow{
   display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,17 +30,17 @@ form input[type="submit"] {
     text-align: center;
     width: 25vw;
 }
-.annualHide, .monthlyHide, .weeklyHide, .dailyHide {
+.annualHide, .monthlyHide, .weeklyHide, .dailyHide, .hrsHide {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
 form{
     width: 90vw;}
-  .annualShow, .monthlyShow, .weeklyShow, .dailyShow {
+  .annualShow, .monthlyShow, .weeklyShow, .dailyShow, .hrsShow {
     width: 100vw;
   }
-  .annualHide, .monthlyHide, .weeklyHide, .dailyHide {
+  .annualHide, .monthlyHide, .weeklyHide, .dailyHide, .hrsHide {
     width: 100vw;
   }
   form input[type="submit"] {
