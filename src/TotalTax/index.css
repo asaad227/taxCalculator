@@ -30,13 +30,18 @@
   }
   
   .main form input {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin: 10px 0;
-    padding: 10px;
-    width: 12.5vw;
+    margin: 0 auto;
+    padding: 0;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+    
+ 
+
+
   
   .main form input[type="submit"] {
     background-color: #4CAF50;
@@ -133,13 +138,13 @@
   }
   .extra-option{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10px;
+    flex-direction: column;
+    margin: 0;
     padding:0;
     color: black
   }
 .extra-option select{
+
     width: 4vw;
     padding: 10px;
     border: none;
@@ -157,15 +162,10 @@
   .result .pensionHide, .result .loanHide{
     display: none;
   }
-   form .annualShow .monthlyShow, .weeklyShow, .dailyShow{
+   .annualShow .monthlyShow, .weeklyShow, .dailyShow{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10px;
-    padding:0;
-    color: black
     }
-    form .annualHide, .monthlyHide, .weeklyHide, .dailyHide{
+    .annualHide, .monthlyHide, .weeklyHide, .dailyHide{
     display: none;
     }
   

@@ -113,49 +113,30 @@ function handleReset(event){
         <div className='extra-option'>
         <label>
         Workplace Pension:
-            <select onChange={(e)=>setIsPension(e.target.value)} value={isPension}>
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-                </select>
-                </label> 
+           <input type="checkbox" onChange={(e)=>setIsPension(e.target.checked)} value={isPension} />
+        </label>
         <label>
         Student Loan:
-        <select onChange={(e)=>setIsLoan(e.target.value)} value={isLoan}>
-        <option value="false">No</option>
-            <option value="true">Yes</option>
-
-            </select>
+      <input type="checkbox" onChange={(e)=>setIsLoan(e.target.checked)} value={isLoan} />
             </label>
                 </div>
                 <h5>Choose your Income Input</h5>
                 <div className='extra-option'>
                 <label>
         Daily Income:
-        <select onChange={(e)=>setIsDaily(e.target.value)} value={isDaily}>
-        <option value="false">No</option>
-            <option value="true">Yes</option>
-            </select>
-            </label>
+        <input type="checkbox" onChange={(e)=>setIsDaily(e.target.checked)} value={isDaily} />
+        </label>
             <label>
         Weekly Income:
-        <select onChange={(e)=>setIsWeekly(e.target.value)} value={isWeekly}>
-        <option value="false">No</option>
-            <option value="true">Yes</option>
-            </select>
+        <input type="checkbox" onChange={(e)=>setIsWeekly(e.target.checked)} value={isWeekly} />
             </label>
             <label>
        Monthly Income:
-        <select onChange={(e)=>setIsMonthly(e.target.value)} value={isMonthly}>
-        <option value="false">No</option>
-            <option value="true">Yes</option>
-            </select>
+         <input type="checkbox" onChange={(e)=>setIsMonthly(e.target.checked)} value={isMonthly} />
             </label>
             <label>
         Annual Income:
-        <select onChange={(e)=>setIsAnnual(e.target.value)} value={isAnnual}>
-        <option value="false">No</option>
-            <option value="true">Yes</option>
-            </select>
+        <input type="checkbox" onChange={(e)=>setIsAnnual(e.target.checked)} value={isAnnual} />
             </label>
                 </div>  
                 <label className={isDaily? 'dailyShow': 'dailyHide'}>
