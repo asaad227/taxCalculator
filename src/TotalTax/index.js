@@ -111,7 +111,7 @@ function handleReset(event){
   return (
     <div>
     <div className='main'>
-        <h1>England Personal Tax Calculator</h1>
+        <h1>UK Personal tax calculator (England):</h1>
         <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
         handleSubmit={handleSubmit} isDaily={isDaily}
          isWeekly={isWeekly} isMonthly={isMonthly} isAnnual={isAnnual} 
@@ -166,7 +166,10 @@ function handleReset(event){
         </aside>
         <footer>
             <p>Disclaimer: This is a simple tax calculator and should not be used for any official purposes.</p>
-
+            <p>Created by <a href='https://www.linkedin.com/in/ahammed-saad-5341b3231/'>Ahammed Saad</a></p>
+            <p>Source code available on <a href="https://github.com/asaad227/taxCalculator.git">Github</a></p>
+            <p>© 2023</p>
+           
         </footer>
     </div>
   )

@@ -13,8 +13,10 @@
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #ffffe0;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
-  
+
   .main h1{
     margin: 10px 0;
     padding: 0;
@@ -33,7 +35,6 @@
     font-size: 0.5em;
   }
   .result{
-  
     text-align: center;
     align-items: center;
     width: 50vw;
@@ -41,6 +42,8 @@
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #ffffe0;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
   p span {
   font-weight: bold;
@@ -116,5 +119,19 @@ margin: 0 50px;
     border-bottom: 1px solid #837c7c;
     margin: 2px 60px;
    }
+    .divider{
+      border-bottom: 2px solid #837c7c;
+      margin: 2px 60px;
+    }
+    .total-tax{
+      color: red;
+    margin: 0 60px;
+    }
+    aside{
+      width: 90vw;
+    }
+    footer{
+      width: 90vw;
+    }
 }
   

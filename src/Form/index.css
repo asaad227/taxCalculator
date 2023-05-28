@@ -4,6 +4,8 @@ form{
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     background-color: #ffffe0;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
 
 form input[type="submit"] {
