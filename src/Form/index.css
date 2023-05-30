@@ -11,7 +11,7 @@ form{
 }
 
 form input[type="submit"] {
-    width: 20vw;
+    width: 12vw;
     padding: 10px;
   border: none;
   border-top-left-radius: 20px;
@@ -46,15 +46,27 @@ form input[type="submit"] {
     text-align: center;
 }
 @media screen and (max-width: 600px) {
-form{
-    width: 90vw;}
-  .annualShow, .monthlyShow, .weeklyShow, .dailyShow, .hrsShow {
-    width: 100vw;
-  }
-  .annualHide, .monthlyHide, .weeklyHide, .dailyHide, .hrsHide {
-    width: 100vw;
-  }
-  form input[type="submit"] {
-    width: 40vw;
-  }
+
+    form{
+        width: 90vw;
+    }
+    form input[type="submit"] {
+        width: 90vw;
+    }
+    .hrsShow {
+        width: 90vw;
+    }
+    .annualShow, .monthlyShow, .weeklyShow, .dailyShow{
+        width: 90vw;
+    }
+    .annualHide, .monthlyHide, .weeklyHide, .dailyHide, .hrsHide {
+        width: 90vw;
+    }
+    .deduction{
+        width: 90vw;
+    }
+
+    form input[type="submit"] {
+        width: 35vw;
+    }
 }
