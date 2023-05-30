@@ -87,15 +87,15 @@ function handleHrs(event){
     <h2>Deductions</h2>
     <label>
     Student Loan:    
-    <span><input type="checkbox" onChange={(e)=>setIsLoan(e.target.checked)} value={isLoan} /></span>
+    <span><input type="checkbox" checked={isLoan} onChange={(e)=>setIsLoan(e.target.checked)} value={isLoan} /></span>
     </label>
     <label>
     Workplace Pension:    
-    <span><input type="checkbox" onChange={(e)=>setIsPension(e.target.checked)} value={isPension} /></span>
+    <span><input type="checkbox" checked={isPension} onChange={(e)=>setIsPension(e.target.checked)} value={isPension} /></span>
     </label>
 </div>
     
-   
+   <input type="submit" value="Calculate" />
     </form>
    
   

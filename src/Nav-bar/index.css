@@ -1,0 +1,49 @@
+nav{
+ 
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    width: 100vw;
+    height: 10vh;
+
+}
+.material-symbols-outlined{
+    font-size: 3rem;
+    color: #ffcc00;
+}
+nav h1{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+nav h1:hover{
+    color: #ffcc00;
+}
+
+
+nav a:hover{
+    color: #ffcc00;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 10px;
+}   
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}

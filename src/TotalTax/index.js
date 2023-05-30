@@ -2,9 +2,10 @@ import React,{useState} from 'react';
 import "./index.css"
 import { taxCalculator, nationalInsurance, studentLoan, statutoryPension } from '../lib';
 import Form from '../Form';
+import NavBar from '../Nav-bar';
 
 
-export default function TotalTax() {
+export default function England() {
 const [isChecked, setIsChecked] = useState(false);
 const [incomeByHour, setIncomeByHour] = useState("");
 const [hrsPerWeek, setHrsPerWeek] = useState("");
@@ -111,11 +112,10 @@ function handleReset(event){
 
   return (
     <div>
+    <NavBar/>
     <div className='main'>
-        <h1>UK Personal tax calculator (England):</h1>
-        <span className="material-symbols-outlined cal-sign">
-calculate
-</span>
+        <h1>UK Personal tax calculator (England)</h1>
+        
         <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
         handleSubmit={handleSubmit} isDaily={isDaily}
          isWeekly={isWeekly} isMonthly={isMonthly} isAnnual={isAnnual} 

@@ -4,6 +4,55 @@
   text-align: center;
 }
 
+.nav-bar{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20vh auto;
+ 
+}
+
+.nav-bar h1{
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.nav-bar h3{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0;
+}
+.nav-bar h1:hover{
+  color: #ffcc00;
+}
+.nav-bar a:hover{
+  color: #ffcc00;
+}
+.nav-bar a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.nav-divider{
+  border-bottom: 4px solid var(--main-border-color);
+  width: 25vw;
+  margin: 0 auto;
+  padding: 0;
+}
+.nav-bar ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+
+
 .App h1 {
   display: flex;
   justify-content: center;
