@@ -1,10 +1,19 @@
+:root{
+    --main-bg-color: #003366;
+    --main-text-color: #ffff00;
+    --main-border-color: #9bedff;
+    --main-shadow-color: rgba(0,0,0,0.2);
+}
+
+
+
 form{
     width: 50vw;
     margin: 20px auto;
-    background-color: #00d2ff;
+    background-color:var(--main-bg-color);
     box-sizing: border-box;
-    box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.2);
-    color: #3f3838;
+    box-shadow: var(--main-shadow-color);
+    color:var(--main-text-color);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
@@ -12,14 +21,12 @@ form{
 form input[type="submit"] {
   width: 12vw;
   padding: 10px;
-  border: none;
+ background-color:  var(--main-border-color);
   box-sizing: border-box;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
+  box-shadow:2px 2px 2px 2px var(--main-shadow-color);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin: 10px 5px;
-    background-color: #9bedff;
 }
 .hrsShow {
   display: inline;
@@ -41,7 +48,10 @@ form input[type="submit"] {
 .annualHide, .monthlyHide, .weeklyHide, .dailyHide, .hrsHide {
   display: none;
 }
-
+.deduction{
+    margin: 10px auto;
+    text-align: center;
+}
 @media screen and (max-width: 600px) {
 form{
     width: 90vw;}

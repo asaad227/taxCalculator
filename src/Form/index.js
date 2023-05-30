@@ -83,7 +83,7 @@ function handleHrs(event){
     setHrsPerWeek={setHrsPerWeek} setIncomeByHour={setIncomeByHour}
     
      />
-    <div>
+    <div className='deduction'>
     <h2>Deductions</h2>
     <label>
     Student Loan:    
@@ -94,7 +94,7 @@ function handleHrs(event){
     <span><input type="checkbox" onChange={(e)=>setIsPension(e.target.checked)} value={isPension} /></span>
     </label>
 </div>
-    <input type="submit" value="Calculate" />
+    
    
     </form>
    

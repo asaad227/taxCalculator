@@ -34,6 +34,7 @@ const [netIncome, setNetIncome] = useState(0);
 
 
 function handleSubmit(event){
+    event.preventDefault();
    if(annualIncome > 0 && monthlyIncome > 0 && weeklyIncome > 0 && daily > 0 && incomeByHour > 0 && hrsPerWeek > 0) {
         alert('Please enter either weekly or monthly or annual income, not all three.');
     }
@@ -55,7 +56,7 @@ function handleSubmit(event){
         setHrsPerWeek("");
     }
    
-    event.preventDefault();
+   
 }
 
 function handleTax(event){
