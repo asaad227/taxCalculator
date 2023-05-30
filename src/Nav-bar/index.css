@@ -1,13 +1,10 @@
 nav{
- 
    display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    justify-content: space-between;
+    background-color: black;
     width: 100vw;
-    height: 10vh;
-
 }
 .material-symbols-outlined{
     font-size: 3rem;
@@ -15,7 +12,7 @@ nav{
 }
 nav h1{
     color: white;
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 500;
     margin: 0;
 }
@@ -32,18 +29,46 @@ nav a:hover{
 nav ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
     list-style: none;
 }
 
-nav ul li{
-    margin: 0 10px;
-}   
+
 
 nav ul li a{
     text-decoration: none;
     color: white;
     font-size: 1rem;
     font-weight: 500;
+    margin: 0 20px;
 }
+
+nav ul li a:hover{
+    color: #ffcc00;
+}
+
+@media screen and (max-width: 600px) {
+    nav{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    nav ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    nav ul li a{
+        margin: 10px 0;
+    }
+    .material-symbols-outlined{
+        font-size: 2rem;
+    }
+    nav h1{
+        font-size: 1.5rem;
+    }
+    nav ul li a{
+        font-size: 1rem;
+    }
+}
+    
