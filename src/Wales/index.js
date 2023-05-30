@@ -116,7 +116,7 @@ export default function Wales() {
         <div>
         <NavBar />
         <div className='main'>
-            <h1>UK Personal tax calculator (England)</h1>
+            <h1>Wales Personal Tax Calculator</h1>
          
             <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
             handleSubmit={handleSubmit} isDaily={isDaily}

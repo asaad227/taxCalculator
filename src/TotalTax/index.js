@@ -114,7 +114,7 @@ function handleReset(event){
     <div>
     <NavBar/>
     <div className='main'>
-        <h1>UK Personal tax calculator (England)</h1>
+        <h1>England Personal Tax Calculator</h1>
         
         <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
         handleSubmit={handleSubmit} isDaily={isDaily}

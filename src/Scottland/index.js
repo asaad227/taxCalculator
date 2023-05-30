@@ -115,7 +115,7 @@ export default function Scotland() {
         <div>
            <NavBar/>
         <div className='main'>
-            <h1>UK Personal tax calculator (Scotland)</h1>
+            <h1>Scotland Personal Tax Calculator</h1>
       
             <Form year={year} setYear={setYear} isLoan={isLoan} setIsLoan={setIsLoan} isPension={isPension} setIsPension={setIsPension}
             handleSubmit={handleSubmit} isDaily={isDaily}
