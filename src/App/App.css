@@ -3,6 +3,61 @@
   flex-direction: column;
   text-align: center;
 }
+.error-txt{
+  text-align: center;
+  color: red;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+.nav-bar{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20vh auto;
+ 
+}
+
+.nav-bar h1{
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.nav-bar h3{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+  margin: 0;
+}
+.nav-bar h1:hover{
+  color: #ffcc00;
+}
+.nav-bar a:hover{
+  color: #ffcc00;
+}
+.nav-bar a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.nav-divider{
+  border-bottom: 4px solid var(--main-border-color);
+  width: 25vw;
+  margin: 0 auto;
+  padding: 0;
+}
+.nav-bar ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+
 
 .App h1 {
   display: flex;
@@ -65,64 +120,6 @@
   background-color: #ffffe0;
 }
 
-.result p{
-  display: flex;
-  justify-content: space-between;
-  margin: 5px 10px;
-  padding:0;
-  color: black
-}
- .divider{
-  border-bottom: 1px solid #837c7c;
-  margin: 0 10px;
-  padding: 0;
-}
-.small-divider{
-  border-bottom: 1px solid #837c7c;
-  margin: 5px 10px;
-  padding: 0;
-}
-.total-tax{
-margin: 0 -48px;
-}
-.no-divider{
-  border-bottom: none;
-  margin: 10px auto;
-  padding: 0;
-  }
-.result p .income{
-  color: #3a5f3a;;
-  font-weight: bold;
-
-}
-.result h2{
-  color: #3a5f3a;
-  font-weight: bold;
-  margin: 10px auto;
-  padding: 0;
-}
-
-.result p .tax{
-  color:red;
-  font-weight: bold;
-  
-}
-select{
-  width: 6vw;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  margin: 10px 5px;
-}
-
-.total{
-  display: flex;
-  flex-direction: column;
-  margin: 0 48px;
-  padding:0;
-  color: black
-}
-
 
 @media screen and (max-width: 600px) {
   .App h1 {
@@ -137,15 +134,6 @@ select{
   .App form input[type="submit"] {
     width: 58vw;
   }
-  .flex-container{
-    width: 90vw;
-  }
-  select{
-    width: 27vw;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin: 10px 5px;
-  }
+ 
 }
   

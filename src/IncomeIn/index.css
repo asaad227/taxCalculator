@@ -1,0 +1,17 @@
+label input[type="number"] {
+  width: 12vw;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 10px 5px;
+}
+
+@media screen and (max-width: 600px) {
+  label input[type="number"] {
+    width: 52vw;
+  }
+
+}
+    

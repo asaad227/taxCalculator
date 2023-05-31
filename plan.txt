@@ -1,0 +1,45 @@
+Component break down:
+
+Top of the page will be Tax year and option
+
+First Component would be form: 
+## Tax year will be selection tag with option for current or past tax years
+    selection option:
+    Workplace pension----By default will be false
+    Student Loan-----By default will be false
+## Income input option it would be daily income, weekly income, 
+    monthly income or annual income
+    
+    with Calculate button
+
+Second Component would be:
+ results
+   -- What ever the input it will be break into 3 income display
+Section for income before tax and Ni display:
+      Weekly
+      Monthly
+      Annual-------------------------£0.00
+      Gross income annual ===========£0.00
+
+  Section 2 for Tax Calculation and extra deduction which is 
+       Tax
+       NI
+       Workplace pention
+       Student Loan
+       --------------------
+       Total deduction:---------------(£0.00)
+    Net Annaul Income------------------£0.00
+    Net Monthly Income ----------------£0.00
+    Net Weekly Income -----------------£0.00
+
+
+    Extra Feature:
+    Nav bar Home Tax Country: Select option
+    Tax calculation for UK
+    Need router for ENGLAND account
+                    Scotland account
+                    Wales Account
+                    
+       
+
+
