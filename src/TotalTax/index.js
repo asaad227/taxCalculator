@@ -131,24 +131,29 @@ function handleReset(event){
              />
         <div className='flex-container result'>
         <h2>Gross Income</h2>
+        <div className='small-divider'></div>
         <p>Total Annual Income: <span className='income'>£{(annualIncome/1).toFixed(2)}</span></p>
         <p>Total Monthly Income: <span className='income'>£{(annualIncome/12).toFixed(2)}</span></p>
         <p>Total Weekly Income: <span className='income'>£{(annualIncome/52).toFixed(2)}</span></p>
-       <div className='divider'></div>
+        <p>Total Daily Income: <span className='income'>£{(annualIncome/52/5).toFixed(2)}</span></p>
+        <div className='small-divider'></div>
        <h2>Deductions</h2>
+       <div className='small-divider'></div>
       
         <p>Tax(Yearly): <span className='total-tax'>£{tax.toFixed(2)}</span></p>
         <p>NI(Yearly): <span className='total-tax'>£{ni.toFixed(2)}</span></p>
        <div className='small-divider'></div>
         <p>Total Tax(Yearly): <span className='total-tax'>£{totalTax.toFixed(2)}</span></p>
-        <p className={isPension? 'pension':'pensionHide'}>Pension: <span className='total-tax'>£{pension.toFixed(2)}</span></p>
-        <p className={isLoan? 'loan':'loanHide'}>Std Loan: <span className='total-tax'>£{educationLoan.toFixed(2)}</span></p>
-        <div className='divider'></div>
+        
+        <p className={isPension? 'pension':'pensionHide'}>Pension(Yearly): <span className='total-tax'>£{pension.toFixed(2)}</span></p>
+        <p className={isLoan? 'loan':'loanHide'}>Std Loan(Yearly): <span className='total-tax'>£{educationLoan.toFixed(2)}</span></p>
+        <div className='small-divider'></div>
         <h2>Net Income</h2>
+        <div className='small-divider'></div>
         <p>Net Yearly Income: <span className='income'>£{netIncome.toFixed(2)}</span></p>
         <p>Net Monthly Income: <span className='income'>£{(netIncome/12).toFixed(2)}</span></p>
         <p>Net Weekly Income: <span className='income'>£{(netIncome/52).toFixed(2)}</span></p>
-        
+        <p>Net Daily Income: <span className='income'>£{(netIncome/52/5).toFixed(2)}</span></p>
         <div className='divider'></div>
         <span>
         <input type='button' value='Calculate Tax' onClick={handleTax} />

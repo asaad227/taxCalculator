@@ -82,11 +82,13 @@ margin-right: 10px;
 display: block;
 
 }
-.small-divider{
+.main .result .small-divider{
 border-bottom: 1px solid #837c7c;
 margin: 5px 50px;
 padding: 0;
+width: 45vw;
 }
+
 
 .pensionHide, .loanHide{
 display: none;
@@ -104,8 +106,9 @@ box-sizing: border-box;
 box-shadow: 0 0 10px 2px var(--main-shadow-color);
 }
 
-.divider{
-border-bottom: 2px solid #131313;
+.main .result .divider{
+  width: 45vw;
+border-bottom: 1px solid #131313;
 margin: 0 auto;
 }
 
@@ -160,13 +163,14 @@ p span {
 font-weight: bold;
 }
 
-.small-divider{
-  border-bottom: 1px solid #837c7c;
-  margin: 2px 60px;
+.main .result .small-divider{
+  width: 85vw;
+  margin: 5px auto;
+
  }
-  .divider{
-    border-bottom: 2px solid #837c7c;
-    margin: 2px 60px;
+  .main .result .divider{
+   width: 85vw;
+    margin: 0 auto;
   }
   .total-tax{
     color: red;
