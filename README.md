@@ -1,4 +1,4 @@
-# UK Personal Tax Calculator (England) - README
+# UK Personal Tax Calculator - README
 This is a tax calculator application built using React.js specifically for calculating personal taxes in the United Kingdom, focusing on England. The calculator allows users to input their income details and additional factors such as student loans and workplace pension schemes to determine their tax liabilities.
 
 # Features 
