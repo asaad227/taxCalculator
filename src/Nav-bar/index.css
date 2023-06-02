@@ -3,15 +3,18 @@ nav{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
+    background-color: var(--main-bg-color);
     width: 100vw;
 }
+.fas{
+    font-size: 2rem;
+    color: #ffcc00;}
 .material-symbols-outlined{
     font-size: 3rem;
     color: #ffcc00;
 }
 nav h1{
-    color: white;
+    color:var(--main-text-color);
     font-size: 2rem;
     font-weight: 500;
     margin: 0;
@@ -37,7 +40,7 @@ nav ul{
 
 nav ul li a{
     text-decoration: none;
-    color: white;
+    color: var(--main-text-color);
     font-size: 1rem;
     font-weight: 500;
     margin: 0 20px;

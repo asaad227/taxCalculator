@@ -3,9 +3,9 @@ form{
     width: 50vw;
     margin: 20px auto;
     background-color:var(--main-bg-color);
-    box-sizing: border-box;
-    box-shadow: var(--main-shadow-color);
-    color:var(--main-text-color);
+  box-sizing: border-box;
+  box-shadow: 2px 2px 6px 2px var(--main-shadow-color);
+  color: var(--main-text-color);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
