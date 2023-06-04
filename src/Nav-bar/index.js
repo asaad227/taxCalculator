@@ -12,7 +12,7 @@ export default function NavBar() {
  
         <nav>
       
-            <h1>Tax Calculator UK</h1>
+      
            
             {/* <span className="material-symbols-outlined">
 calculate

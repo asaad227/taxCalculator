@@ -41,7 +41,7 @@ export default function DarkMode({toggle, setToggle}) {
       }
   return (
     <div className='darkmood'>
-           <i className={toggle? 'fas fa-toggle-off':'fas fa-toggle-on'} onClick={handleClick}></i>
+           <i className={toggle? 'fas fa-toggle-off ':'fas fa-toggle-on'} onClick={handleClick}></i>
     </div>
   )
 }
