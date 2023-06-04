@@ -3,12 +3,10 @@ nav{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color) !important;
     width: 100vw;
 }
-.fas{
-    font-size: 2rem;
-    color: #ffcc00;}
+
 .material-symbols-outlined{
     font-size: 3rem;
     color: #ffcc00;
@@ -23,7 +21,6 @@ nav h1{
 nav h1:hover{
     color: #ffcc00;
 }
-
 
 nav a:hover{
     color: #ffcc00;

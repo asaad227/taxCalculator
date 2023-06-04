@@ -17,7 +17,7 @@ form input[type="submit"] {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin: 10px 5px;
-  background-color: var(--main-border-color);
+  background-color: var(--main-btn-color);
   box-sizing: border-box;
   box-shadow: 0 0 10px 2px var(--main-shadow-color);
 }

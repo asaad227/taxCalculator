@@ -1,0 +1,16 @@
+.nav-bar{
+    background-color:var(--main-bg-color);
+    color: var(--main-text-color);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nav-bar a{
+    color: var(--main-text-color);
+    text-decoration: none;
+}
+.nav-bar a:hover{
+    color: #ffcc00;
+}

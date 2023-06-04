@@ -1,0 +1,10 @@
+.darkmood .fas {
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #ffcc00;
+    padding-right: 20px;
+
+}

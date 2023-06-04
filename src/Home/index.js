@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import "./index.css";
+
 export default function Home() {
   return (
     <div className="nav-bar">
@@ -10,6 +12,8 @@ export default function Home() {
       <li> <Link to="/england">England</Link></li>
       <li> <Link to="/scotland">Scotland</Link></li>
       <li> <Link to="/wales">Wales</Link></li>
+      
+    
     </ul>
     </div>
   )

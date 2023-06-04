@@ -1,8 +1,9 @@
 :root{
-  --main-bg-color: #ffffff;
+  --main-bg-color: #dfe9ec;
   --main-text-color: #990099;
   --main-border-color: #668086;
-  --main-shadow-color: rgba(0,0,0,0.2);
+  --main-btn-color: #ffcc00;
+  --main-shadow-color: rgba(249, 249, 249, 0.506);
 }
 * {
   margin: 0;
